@@ -246,13 +246,13 @@ section.freelancer p{
 
 section.work {
     background: var(--pure);
-    padding: 6rem 0;
+    padding: 6rem 1rem; /* Add horizontal padding for small screens */
 }
 
 section.work .section-heading {
     text-align: center;
-    line-height: 0.5;
-    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
     color: var(--secondary);
 }
 
@@ -263,18 +263,24 @@ section.work .section-heading span {
 section.work .card-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    gap: 2rem;
+    justify-items: center;
 }
+@media (max-width: 768px) {
+    section.work .card-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 section.work .card {
     background: var(--light);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
     transition: transform 0.3s ease;
-    width: 650px;
-    right: 90px;
+    width: 100%;
+    max-width: 600px; /* Limit max width */
 }
 
 section.work .card:hover {
@@ -289,8 +295,9 @@ section.work .card h2 {
     color: var(--secondary);
     letter-spacing: 1.02px;
 }
+
 section.work .card p {
-    font-size: 0.80rem;
+    font-size: 0.9rem;
     text-align: center;
     font-weight: 600;
     color: var(--secondary);
@@ -308,12 +315,24 @@ section.work .card ul.des li {
     color: var(--ternary);
     margin-bottom: 0.5rem;
 }
+@media (max-width: 480px) {
+    section.work {
+        padding: 4rem 1rem;
+    }
 
-@media (max-width: 768px) {
-    section.work .card-wrapper {
-        grid-template-columns: repeat(1, 1fr);
+    section.work .card h2 {
+        font-size: 1.1rem;
+    }
+
+    section.work .card p {
+        font-size: 0.8rem;
+    }
+
+    section.work .card ul.des li {
+        font-size: 0.9rem;
     }
 }
+
 section.projects{
     background:var(--light);
 }
